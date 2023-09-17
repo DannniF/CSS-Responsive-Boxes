@@ -6,13 +6,24 @@
     <link rel="stylesheet" href="main.css">
   </head>
   <body>
+    <!-- steps to break down a layout, step 1 : break the layout into bigger chuncks, first div goes out to contain every box. -->
+    <!-- second step: is to group up boxes until you group the ones that will stay side by side.     -->
     <div class="container">
-      <div class="a">a</div>
-      <div class="b">b</div>
-      <div class="c">c</div>
-      <div class="d">d</div>
-      <div class="e">e</div>
-      <div class="f">f</div>
-    </div>
+          
+          <header class="styleA">A</header>
+          <div class="container2">
+            <main class="styleC">b</main>
+            <!-- aside is our third div making it its own section -->
+            <aside>    
+              <div class="styleB">c</div>
+              <div class="styleB" >d</div>
+              <div class="styleB">e</div>
+            </aside class="styleB">
+          </div>
+          <footer class="styleA">f</footer>
+          <!-- footer and header are under the same class since they will have the same rules for mobile view -->
+        </div>
+
+
   </body>
 </html>

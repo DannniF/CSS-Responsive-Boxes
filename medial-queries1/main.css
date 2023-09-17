@@ -25,7 +25,7 @@ p {
   margin: 10px;
 }
 
-
+/* the container class is set to flex since it i the parent of the header main and footer */
 .container {
   display: flex;
   min-height: 100vh;
@@ -33,32 +33,32 @@ p {
 
 
 
-}
 
+}
 header,footer {
   flex-grow: 1;
+
 }
 
 main{
-  flex-grow: 3;
+  flex-grow: 6;
+  min-height: 60vh;
+  /* setting up a min-height allows us to change the ratio of B and C from A  */
 }
 
 @media(min-width: 600px){
   .container {
     flex-direction: row;
     flex-wrap: wrap;
- 
   }
-
+/* header is made 100% and pushes main and footer onto the nex column as rows to each other */
+/* since we used flex-grow we do not need to set the width of main and footer as we already achived a 3:1 ratio */
   header {
     width: 100%;
-   
-
-
+  
   }
 
   main,footer,header {
     margin: 1em;
-    min-height: ;
   }
 }

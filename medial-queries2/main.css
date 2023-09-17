@@ -1,3 +1,98 @@
-body {
+ body {
   background: papayawhip;
 }
+ * {
+  border: 1px solid red;
+} 
+/* for review i will be switching all numbers from em to vh beacuse it seems better suited for flex-box */
+/* step 1 write down both classes and make the display flex
+step 2: add a min-height to make room to move around our boxes */
+/* step 3 since we are working from small to big then we are making the direction into column */
+.container{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/* in container 2 we start making room for the divs to move and how much space they will take up by setting 
+min height to at least 60vh to take more*/
+/* since container2 has the most space given to it we set a flex-grow at 3 */
+/* aligning items to be in the center of the parent which is .container */
+/* min-height set to at least 50em to give enough room to b,c,d,e */
+.container2{
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: column;
+  flex-grow: 3; 
+ align-items: center;
+ min-height:50em;
+}
+
+.styleA{
+   background-color: lightcoral;
+   font-size: 1em;
+   text-align: center;
+}
+
+.styleB{
+ background: lightgreen;
+ font-size: 1em;
+ text-align: center;
+}
+
+.styleC{
+  background: lightgoldenrodyellow;
+  font-size: 1em;
+  text-align: center;
+}
+/* we are selecting all divs which make up the 4 column */
+
+header, footer, aside, .container2{
+  margin: 20px;
+  max-height: 10em;
+   flex-grow:1;
+}
+/* aside needs to be changed to a display of flex since it is the parent of the divs inside it */
+/* a width of 90% leaves enough room in the sides  */
+
+aside {
+  display: flex;
+  width: 90%;
+  min-height: 20vh;
+}
+
+aside div {
+  flex-grow: 5;
+  margin: 20px;
+}
+
+main{
+  width: 90%;
+  flex-grow: 1;
+  margin: 20px;
+}
+/* switching into full desktop view we now change the direction into rows */
+/* by not wraping we see all rows squished on the top column ,with flex-wrap we can start a new column of rows  */
+@media(min-width: 600px){
+  .container{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  /* giving the header a width of 100% moves container2 plus  footer onto a new column as rows */
+  /* min-height is placed to make sure it does not get smaller than intended */
+  header{
+    width: 100%;
+    min-height: 15em;
+  }
+  
+  .container2{
+    width: 70%;
+    min-height: 70em;
+  }
+
+  footer{
+    min-height: 70em;
+    width: 20%;
+  }
+}
+
+
